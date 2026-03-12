@@ -551,7 +551,7 @@ function initIntroSequence() {
 
         tl.set(".intro-logo", { filter: "blur(11px)", scale: 0.9 });
         tl.set(".intro-bolt path", { strokeDashoffset: 390 });
-        tl.set([".intro-shutter-top", ".intro-shutter-bottom"], { opacity: 1 });
+        tl.set([".intro-shutter-top", ".intro-shutter-bottom"], { opacity: 0 });
         tl.set(".intro-tagline", { letterSpacing: "0.025em" });
 
         tl.fromTo(
