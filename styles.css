@@ -20,7 +20,6 @@ body {
         radial-gradient(750px 420px at 6% 30%, rgba(0, 209, 255, 0.12), transparent 55%),
         var(--bg);
     color: var(--text);
-    display: none;
 }
 
 .site-shell {

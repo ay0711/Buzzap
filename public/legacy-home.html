@@ -1,588 +1,367 @@
 <div id="scroll-progress-bar" aria-hidden="true"></div>
-    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-    <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-    <div id="intro-overlay" class="intro-overlay" aria-hidden="true">
-        <div class="intro-shutter intro-shutter-top" aria-hidden="true"></div>
-        <div class="intro-shutter intro-shutter-bottom" aria-hidden="true"></div>
-        <div class="intro-grid"></div>
-        <div class="intro-noise"></div>
-        <div class="intro-vignette"></div>
-        <div class="intro-core-glow"></div>
-        <div class="intro-logo" aria-label="Buzzap logo animation">
-            <span class="intro-buz">BUZ</span>
-            <span class="intro-bolt" aria-hidden="true">
-                <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M68 4L30 95H66L48 176L90 82H58L68 4Z"></path>
-                </svg>
-            </span>
-            <span class="intro-zap">ZAP</span>
-        </div>
-        <p class="intro-tagline">Buzz your brand. Zap your growth.</p>
-        <div class="intro-wipe" aria-hidden="true"></div>
-        <div class="intro-flash" aria-hidden="true"></div>
+<div id="intro-overlay" class="intro-overlay" aria-hidden="true">
+    <div class="intro-shutter intro-shutter-top" aria-hidden="true"></div>
+    <div class="intro-shutter intro-shutter-bottom" aria-hidden="true"></div>
+    <div class="intro-grid"></div>
+    <div class="intro-noise"></div>
+    <div class="intro-vignette"></div>
+    <div class="intro-core-glow"></div>
+    <div class="intro-logo" aria-label="Buzzap logo animation">
+        <span class="intro-buz">BUZ</span>
+        <span class="intro-bolt" aria-hidden="true">
+            <svg viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M68 4L30 95H66L48 176L90 82H58L68 4Z"></path>
+            </svg>
+        </span>
+        <span class="intro-zap">ZAP</span>
     </div>
+    <p class="intro-tagline">Buzz your brand. Zap your growth.</p>
+    <div class="intro-wipe" aria-hidden="true"></div>
+    <div class="intro-flash" aria-hidden="true"></div>
+</div>
 
-    <div id="site-shell" class="site-shell">
-    <a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded">Skip to main content</a>
+<div id="site-shell" class="site-shell">
+<a href="#home" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:bg-white focus:text-black focus:px-3 focus:py-2 focus:rounded">Skip to main content</a>
 
-    <header id="site-header"  class="stickypu inset-x-0 top-0 z-50 transition-all duration-500">
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-            <a href="#home" class="logo group" aria-label="Buzzap Innovations home">
-                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">BUZ</span>
-                <span class="bolt" aria-hidden="true">⚡</span>
-                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">ZAP</span>
-            </a>
+<header id="site-header" class="stickypu inset-x-0 top-0 z-50 transition-all duration-500">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+        <a href="#home" class="logo group" aria-label="Buzzap Innovations home">
+            <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">BUZ</span>
+            <span class="bolt" aria-hidden="true">⚡</span>
+            <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">ZAP</span>
+        </a>
 
-            <button id="menu-toggle" class="menu-btn lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
-                <span></span><span></span><span></span>
-            </button>
+        <button id="menu-toggle" class="menu-btn lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+        </button>
 
-            <ul class="hidden items-center gap-7 text-sm font-medium lg:flex">
-                <li><a class="nav-link" href="#home">Home</a></li>
-                <li><a class="nav-link" href="#services">Services</a></li>
-                <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
-                <li class="relative group/dropdown">
-                    <button class="nav-link inline-flex items-center gap-2" aria-expanded="false">Insights <span>▾</span></button>
-                    <div class="dropdown-panel absolute left-0 top-full mt-3 w-52 rounded-xl border border-white/15 bg-[#0a1223]/95 p-2 shadow-[0_0_28px_rgba(57,163,255,.24)] backdrop-blur-xl">
-                        <a class="dropdown-link" href="#insights">Latest Articles</a>
-                        <a class="dropdown-link" href="#insights">AI Playbooks</a>
-                        <a class="dropdown-link" href="#insights">Industry News</a>
+        <ul class="hidden items-center gap-7 text-sm font-medium lg:flex">
+            <li><a class="nav-link" href="#home">Home</a></li>
+            <li><a class="nav-link" href="#services">Services</a></li>
+            <li><a class="nav-link" href="#case-studies">Case Studies</a></li>
+            <li><a class="nav-link" href="#insights">Insights</a></li>
+            <li><a class="nav-link" href="#academy">Academy</a></li>
+            <li><a class="nav-link" href="#intro-call">Book Call</a></li>
+        </ul>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#case-studies">Case Studies</a>
+        <a href="#insights">Insights</a>
+        <a href="#academy">Academy</a>
+        <a href="#intro-call">Book Call</a>
+    </div>
+</header>
+
+<main id="home" class="relative">
+    <section class="hero relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-28 md:px-8">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
+        <div id="particle-layer" aria-hidden="true"></div>
+
+        <div class="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
+            <div>
+                <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-buzzCyan"><span class="badge-dot" aria-hidden="true"></span>Buzz your brand. Zap your growth.</p>
+                <h1 class="hero-title text-4xl font-semibold leading-tight md:text-6xl xl:text-7xl">The Last Growth Partner You Will Ever Want.</h1>
+                <p class="mt-8 max-w-2xl text-base text-white/75 md:text-lg">We build brand clarity, demand generation, and automation systems that turn attention into predictable pipeline.</p>
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="#intro-call" class="btn-primary magnetic">Book Free Strategy Call</a>
+                    <a href="#services" class="btn-secondary magnetic">Explore Services</a>
+                </div>
+            </div>
+
+            <div class="relative mx-auto w-full max-w-md">
+                <div class="hero-card reveal">
+                    <div class="lightning-wrap" aria-hidden="true">
+                        <svg class="lightning-svg" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M68 4L30 95H66L48 176L90 82H58L68 4Z" class="bolt-path"></path>
+                        </svg>
                     </div>
-                </li>
-                <li><a class="nav-link" href="#approach">How We Work</a></li>
-                <li><a class="nav-link" href="#about">About</a></li>
-                <li><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+                    <h2 class="mb-2 text-xl font-semibold">Mission</h2>
+                    <p class="text-white/75">Build attention-grabbing brands and high-converting growth systems that compound every quarter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div id="mobile-menu" class="mobile-menu lg:hidden" aria-hidden="true">
-            <a href="#home">Home</a>
+    <section class="section-wrap reveal" aria-label="Trusted by brands">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 class="section-title">Trusted by Brands</h2>
+            <div class="logo-marquee">
+                <div class="logo-track">
+                    <span>Nexora</span><span>Fluxly</span><span>HelioLabs</span><span>CloudMint</span><span>Quantive</span><span>NovaGrid</span><span>Aetherly</span>
+                    <span>Nexora</span><span>Fluxly</span><span>HelioLabs</span><span>CloudMint</span><span>Quantive</span><span>NovaGrid</span><span>Aetherly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="signature-system" class="section-wrap reveal pt-0">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <div class="mb-8 max-w-3xl">
+                <p class="eyebrow">Buzzap Growth System</p>
+                <h2 class="section-title mb-3">One system from traffic to revenue, not isolated deliverables.</h2>
+                <p class="section-intro">We architect growth in sequence so each layer supports the next: visibility, conversion, qualification, and revenue expansion.</p>
+            </div>
+            <div class="engine-flow" aria-label="Buzzap growth engine flow">
+                <div class="engine-node"><span>01</span><strong>Traffic</strong></div>
+                <div class="engine-arrow" aria-hidden="true">-></div>
+                <div class="engine-node"><span>02</span><strong>Brand Authority</strong></div>
+                <div class="engine-arrow" aria-hidden="true">-></div>
+                <div class="engine-node"><span>03</span><strong>Lead Capture</strong></div>
+                <div class="engine-arrow" aria-hidden="true">-></div>
+                <div class="engine-node"><span>04</span><strong>AI Qualification</strong></div>
+                <div class="engine-arrow" aria-hidden="true">-></div>
+                <div class="engine-node"><span>05</span><strong>CRM Pipeline</strong></div>
+                <div class="engine-arrow" aria-hidden="true">-></div>
+                <div class="engine-node engine-node-accent"><span>06</span><strong>Revenue Growth</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-wrap reveal">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 class="section-title">Services</h2>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <article class="service-card">
+                    <div class="service-icon">B</div>
+                    <h3>Brand &amp; Visual Identity</h3>
+                    <p>Logo systems, positioning, and visual assets that sharpen how your company is perceived.</p>
+                    <a href="services.html">View service details</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">A</div>
+                    <h3>AI SEO Optimization</h3>
+                    <p>SEO automation, keyword intelligence, and content production pipelines built to rank and convert.</p>
+                    <a href="services.html">View service details</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">P</div>
+                    <h3>Paid Ads Campaigns</h3>
+                    <p>Performance campaigns with conversion tracking and creative testing across key ad channels.</p>
+                    <a href="services.html">View service details</a>
+                </article>
+                <article class="service-card">
+                    <div class="service-icon">C</div>
+                    <h3>CRM Systems</h3>
+                    <p>HubSpot-centric pipeline architecture and automation to increase speed-to-close.</p>
+                    <a href="services.html">View service details</a>
+                </article>
+                <article class="service-card md:col-span-2 xl:col-span-1">
+                    <div class="service-icon">M</div>
+                    <h3>AI-Powered Marketing Systems</h3>
+                    <p>Lead generation and outreach automations powered by Make and Apollo.io.</p>
+                    <a href="services.html">View service details</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="case-studies" class="section-wrap reveal">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 class="section-title">Case Studies</h2>
+            <div class="case-filters mb-6 flex flex-wrap gap-2">
+                <button class="filter-btn is-active" data-filter="all" type="button">All</button>
+                <button class="filter-btn" data-filter="saas" type="button">SaaS</button>
+                <button class="filter-btn" data-filter="fintech" type="button">FinTech</button>
+                <button class="filter-btn" data-filter="ecommerce" type="button">Ecommerce</button>
+            </div>
+            <div class="grid gap-6 lg:grid-cols-3">
+                <article class="case-card" data-industry="fintech">
+                    <h3>FinTech Pipeline Rebuild</h3>
+                    <p><strong>Problem:</strong> Poor lead quality from broad ad targeting.</p>
+                    <p><strong>Strategy:</strong> Segmentation with AI audience scoring and refined LP messaging.</p>
+                    <p><strong>Result:</strong> <span class="metric">300% increase in qualified leads</span></p>
+                    <div class="result-bar"><div class="result-bar-fill" style="--pct: 75%"></div></div>
+                    <a href="#intro-call">View Full Case Study</a>
+                </article>
+                <article class="case-card" data-industry="saas">
+                    <h3>SaaS Organic Surge</h3>
+                    <p><strong>Problem:</strong> Low visibility in high-intent search categories.</p>
+                    <p><strong>Strategy:</strong> Programmatic SEO clusters and intent-driven conversion pages.</p>
+                    <p><strong>Result:</strong> <span class="metric">4.2x growth in organic SQLs</span></p>
+                    <div class="result-bar"><div class="result-bar-fill" style="--pct: 82%"></div></div>
+                    <a href="#intro-call">View Full Case Study</a>
+                </article>
+                <article class="case-card" data-industry="ecommerce">
+                    <h3>DTC Revenue Optimization</h3>
+                    <p><strong>Problem:</strong> Rising CPA and weak product page conversion.</p>
+                    <p><strong>Strategy:</strong> Creative refresh, CRO sprints, and lifecycle automation.</p>
+                    <p><strong>Result:</strong> <span class="metric">57% increase in conversion rate</span></p>
+                    <div class="result-bar"><div class="result-bar-fill" style="--pct: 57%"></div></div>
+                    <a href="#intro-call">View Full Case Study</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-wrap reveal" aria-label="Client testimonials">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 class="section-title">Testimonials</h2>
+            <div class="testimonial-wrap">
+                <div class="testimonial-track" id="testimonial-track">
+                    <article class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Sarah Lee">
+                        <h3>Sarah Lee</h3>
+                        <p class="company">Nexora Labs</p>
+                        <p class="stars">★★★★★</p>
+                        <p class="quote">Buzzap transformed our brand presence and built a system that actually compounds revenue.</p>
+                    </article>
+                    <article class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Michael Grant">
+                        <h3>Michael Grant</h3>
+                        <p class="company">CloudMint</p>
+                        <p class="stars">★★★★★</p>
+                        <p class="quote">From strategy to execution, every channel became more efficient and easier to scale.</p>
+                    </article>
+                    <article class="testimonial-card">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Aisha Patel">
+                        <h3>Aisha Patel</h3>
+                        <p class="company">Vertex Health</p>
+                        <p class="stars">★★★★★</p>
+                        <p class="quote">We saw stronger positioning, better lead quality, and faster sales cycles.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="intro-call" class="section-wrap reveal pt-0">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <div class="intro-call-card">
+                <div>
+                    <p class="eyebrow">Book Intro Call</p>
+                    <h2 class="section-title mb-3">Let's Build Your Growth System</h2>
+                    <p class="section-intro">Book a 15-minute strategy call and we will map the fastest path to better pipeline quality and conversion performance.</p>
+                </div>
+                <a href="https://calendly.com/" target="_blank" rel="noreferrer" class="btn-primary magnetic">Book Free Strategy Call</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="insights" class="section-wrap reveal">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 class="section-title">Insights / Blog</h2>
+            <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                <article class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="AI strategy visualization">
+                    </div>
+                    <div class="blog-card-body">
+                        <h3>AI Marketing in 2026</h3>
+                        <p>How lean teams can deploy high-output AI systems without bloating operations.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80" alt="Automation workflow dashboard">
+                    </div>
+                    <div class="blog-card-body">
+                        <h3>Automation Systems That Sell</h3>
+                        <p>The practical stack for lead nurturing, qualification, and pipeline velocity.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-card-thumb">
+                        <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Growth chart and analytics screen">
+                    </div>
+                    <div class="blog-card-body">
+                        <h3>Growth Strategies With Signal</h3>
+                        <p>Use first-party data and experimentation loops to scale with confidence.</p>
+                        <a href="#">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="academy" class="section-wrap reveal pt-0">
+        <div class="mx-auto max-w-7xl px-5 md:px-8">
+            <div class="academy-panel">
+                <h2>Academy Preview</h2>
+                <p>Access tactical playbooks, templates, and implementation walkthroughs your team can use immediately.</p>
+                <div class="grid gap-4 md:grid-cols-3 mt-6">
+                    <article class="proof-card">
+                        <p class="proof-label">Playbook</p>
+                        <h3 class="mt-2">Offer Positioning Sprint</h3>
+                    </article>
+                    <article class="proof-card">
+                        <p class="proof-label">Template</p>
+                        <h3 class="mt-2">Paid Media Reporting System</h3>
+                    </article>
+                    <article class="proof-card">
+                        <p class="proof-label">Workshop</p>
+                        <h3 class="mt-2">CRM Pipeline Conversion Lab</h3>
+                    </article>
+                </div>
+                <a href="#insights" class="btn-primary mt-6 inline-flex">Explore Academy Content</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="border-t border-white/10 py-12">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-3 md:px-8">
+        <div>
+            <h3 class="footer-title">EXPLORE</h3>
             <a href="#services">Services</a>
+            <a href="services.html">Services Page</a>
             <a href="#case-studies">Case Studies</a>
             <a href="#insights">Insights</a>
-            <a href="#approach">How We Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="#academy">Academy</a>
         </div>
-    </header>
-
-    <main id="home" class="relative">
-        <section class="hero relative flex min-h-screen items-center overflow-hidden px-5 pb-20 pt-28 md:px-8">
-            <div class="hero-grid" aria-hidden="true"></div>
-            <div class="hero-glow hero-glow-1" aria-hidden="true"></div>
-            <div class="hero-glow hero-glow-2" aria-hidden="true"></div>
-            <div id="particle-layer" aria-hidden="true"></div>
-
-            <div class="relative z-10 mx-auto grid w-full max-w-7xl gap-14 lg:grid-cols-[1.2fr_.8fr] lg:items-center">
-                <div>
-                    <p class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.24em] text-buzzCyan"><span class="badge-dot" aria-hidden="true"></span>Buzz your brand. Zap your growth.</p>
-                    <h1 class="hero-title text-4xl font-semibold leading-tight md:text-6xl xl:text-7xl">The Last Growth Partner You Will Ever Want.</h1>
-                    <p class="mt-8 max-w-2xl text-base text-white/75 md:text-lg">We blend performance marketing, AI visibility, and creative systems to unlock profitable growth where others hit limits.</p>
-                    <div class="mt-10 flex flex-wrap gap-4">
-                        <a href="#intro-call" class="btn-primary magnetic">Book Free Strategy Call</a>
-                        <a href="#case-studies" class="btn-secondary magnetic">View Our Work</a>
-                    </div>
-                </div>
-
-                <div class="relative mx-auto w-full max-w-md">
-                    <div class="hero-card reveal">
-                        <div class="lightning-wrap" aria-hidden="true">
-                            <svg class="lightning-svg" viewBox="0 0 120 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M68 4L30 95H66L48 176L90 82H58L68 4Z" class="bolt-path"></path>
-                            </svg>
-                        </div>
-                        <h2 class="mb-2 text-xl font-semibold">Mission</h2>
-                        <p class="text-white/75">We Build Brands That Get Attention and Convert through premium strategy, creative systems, and measurable growth.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-wrap reveal pt-0" aria-label="Results metrics">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="mb-8 max-w-3xl">
-                    <p class="eyebrow">Results Metrics</p>
-                    <h2 class="section-title mb-3">Proof that your growth system can scale.</h2>
-                    <p class="section-intro">These numbers make the offer concrete fast: execution capacity, lead volume, budget responsibility, and automation depth.</p>
-                </div>
-                <div class="results-grid grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-                    <article class="proof-card">
-                        <p class="proof-metric" data-count="120" data-prefix="" data-suffix="+">120+</p>
-                        <p class="proof-label">Brands Scaled</p>
-                    </article>
-                    <article class="proof-card">
-                        <p class="proof-metric" data-count="500" data-prefix="" data-suffix=",000+">500,000+</p>
-                        <p class="proof-label">Leads Generated</p>
-                    </article>
-                    <article class="proof-card">
-                        <p class="proof-metric" data-count="3" data-prefix="$" data-suffix="M+">$3M+</p>
-                        <p class="proof-label">Ad Spend Managed</p>
-                    </article>
-                    <article class="proof-card">
-                        <p class="proof-metric" data-count="250" data-prefix="" data-suffix="+">250+</p>
-                        <p class="proof-label">Automation Workflows Built</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-wrap reveal" aria-label="Trusted by growing brands">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Trusted by Growth Teams</h2>
-                <div class="logo-marquee">
-                    <div class="logo-track">
-                        <span>Nexora</span><span>Fluxly</span><span>HelioLabs</span><span>CloudMint</span><span>Quantive</span><span>NovaGrid</span><span>Aetherly</span>
-                        <span>Nexora</span><span>Fluxly</span><span>HelioLabs</span><span>CloudMint</span><span>Quantive</span><span>NovaGrid</span><span>Aetherly</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Our Services</h2>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="service-card">
-                        <div class="service-icon">✦</div>
-                        <h3>Paid Media (PPC)</h3>
-                        <p>Google Ads, Meta Ads, and LinkedIn systems engineered for scalable acquisition efficiency.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">⚙</div>
-                        <h3>AI Visibility (AEO/GEO)</h3>
-                        <p>Position your brand to win in ChatGPT, Perplexity, and Google AI answer surfaces.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">◉</div>
-                        <h3>SEO</h3>
-                        <p>Technical, on-page, and authority-focused programs built for durable organic performance.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon">⌁</div>
-                        <h3>Video Production</h3>
-                        <p>Performance creative and thought leadership content designed to convert across channels.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                    <article class="service-card md:col-span-2 xl:col-span-1">
-                        <div class="service-icon">⚡</div>
-                        <h3>AI Consulting</h3>
-                        <p>Embedded AI strategy and implementation to improve output, decision speed, and margin.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                    <article class="service-card md:col-span-2 xl:col-span-1">
-                        <div class="service-icon">✺</div>
-                        <h3>Revenue Operations</h3>
-                        <p>Pipeline design, attribution clarity, and conversion systems that align sales and marketing.</p>
-                        <a href="#contact">Learn more</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="signature-system" class="section-wrap reveal pt-0">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="mb-8 max-w-3xl">
-                    <p class="eyebrow">The Buzzap Growth Engine</p>
-                    <h2 class="section-title mb-3">We sell complete growth infrastructure, not disconnected services.</h2>
-                    <p class="section-intro">The fastest-growing agencies package the whole system: traffic, authority, capture, qualification, pipeline, and revenue. That is the operating model clients are buying.</p>
-                </div>
-                <div class="engine-flow" aria-label="Buzzap growth engine flow">
-                    <div class="engine-node"><span>01</span><strong>Traffic</strong></div>
-                    <div class="engine-arrow" aria-hidden="true">↓</div>
-                    <div class="engine-node"><span>02</span><strong>Brand Authority</strong></div>
-                    <div class="engine-arrow" aria-hidden="true">↓</div>
-                    <div class="engine-node"><span>03</span><strong>Lead Capture</strong></div>
-                    <div class="engine-arrow" aria-hidden="true">↓</div>
-                    <div class="engine-node"><span>04</span><strong>AI Lead Qualification</strong></div>
-                    <div class="engine-arrow" aria-hidden="true">↓</div>
-                    <div class="engine-node"><span>05</span><strong>Automated Sales Pipeline</strong></div>
-                    <div class="engine-arrow" aria-hidden="true">↓</div>
-                    <div class="engine-node engine-node-accent"><span>06</span><strong>Revenue Growth</strong></div>
-                </div>
-            </div>
-        </section>
-
-        <section id="industries" class="section-wrap reveal pt-0">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="mb-8 max-w-3xl">
-                    <p class="eyebrow">Who We Work With</p>
-                    <h2 class="section-title mb-3">Industries we help scale with sharper systems.</h2>
-                    <p class="section-intro">This makes the positioning more selective. You are not trying to be for everyone, and that improves trust with serious buyers.</p>
-                </div>
-                <div class="industry-grid">
-                    <article class="industry-pill">Law Firms</article>
-                    <article class="industry-pill">Security Companies</article>
-                    <article class="industry-pill">Real Estate Firms</article>
-                    <article class="industry-pill">SaaS Startups</article>
-                    <article class="industry-pill">Consulting Firms</article>
-                    <article class="industry-pill">Logistics Companies</article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-wrap reveal pt-0" aria-label="Featured in and trusted by">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Recognized by Growth Leaders</h2>
-                <div class="press-strip">
-                    <div class="press-track">
-                        <span>Forbes Tech</span>
-                        <span>Growth Weekly</span>
-                        <span>AI Commerce Review</span>
-                        <span>SaaS Scale Digest</span>
-                        <span>MarTech Wire</span>
-                        <span>Forbes Tech</span>
-                        <span>Growth Weekly</span>
-                        <span>AI Commerce Review</span>
-                        <span>SaaS Scale Digest</span>
-                        <span>MarTech Wire</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="approach" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">How We Work</h2>
-                <div class="culture-grid">
-                    <article class="culture-card reveal">
-                        <p class="culture-index">01</p>
-                        <h3>We are wired to do whatever it takes.</h3>
-                        <p>Above all, we are problem solvers. Where others see blockers, we find leverage and momentum.</p>
-                        <ul>
-                            <li>We solve problems other teams do not look for</li>
-                            <li>We are technical and not afraid to write code</li>
-                            <li>We take extreme ownership of outcomes</li>
-                        </ul>
-                    </article>
-                    <article class="culture-card reveal">
-                        <p class="culture-index">02</p>
-                        <h3>We adjust to clients, not the other way around.</h3>
-                        <p>Collaboration works when systems fit your team. We design communication and execution around your workflow.</p>
-                        <ul>
-                            <li>Customized project management for your operating rhythm</li>
-                            <li>You work with specialists, not account relays</li>
-                            <li>Integrated with your internal and external partners</li>
-                        </ul>
-                    </article>
-                    <article class="culture-card reveal">
-                        <p class="culture-index">03</p>
-                        <h3>Relationships measured in years, not months.</h3>
-                        <p>We earn retention through compounding results and strategic value, not contractual lock-ins.</p>
-                        <ul>
-                            <li>We aim to be a profit center, not a cost center</li>
-                            <li>No long-term contracts required</li>
-                            <li>Strategic guidance with deep subject expertise</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="case-studies" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Case Studies</h2>
-                <div class="case-filters mb-6 flex flex-wrap gap-2">
-                    <button class="filter-btn is-active" data-filter="all" type="button">All</button>
-                    <button class="filter-btn" data-filter="saas" type="button">SaaS</button>
-                    <button class="filter-btn" data-filter="fintech" type="button">FinTech</button>
-                    <button class="filter-btn" data-filter="ecommerce" type="button">Ecommerce</button>
-                </div>
-                <div class="grid gap-6 lg:grid-cols-3">
-                    <article class="case-card" data-industry="fintech">
-                        <h3>FinTech Pipeline Rebuild</h3>
-                        <p><strong>Problem:</strong> Poor lead quality from broad ad targeting.</p>
-                        <p><strong>Strategy:</strong> Full-funnel segmentation with AI-powered audience scoring.</p>
-                        <p><strong>Result:</strong> <span class="metric">300% increase in qualified leads</span></p>
-                        <div class="result-bar"><div class="result-bar-fill" style="--pct: 75%"></div></div>
-                        <a href="#contact">View Full Case Study</a>
-                    </article>
-                    <article class="case-card" data-industry="saas">
-                        <h3>SaaS Organic Surge</h3>
-                        <p><strong>Problem:</strong> Low visibility in high-intent search categories.</p>
-                        <p><strong>Strategy:</strong> Programmatic SEO clusters with conversion-led content systems.</p>
-                        <p><strong>Result:</strong> <span class="metric">4.2x growth in organic SQLs</span></p>
-                        <div class="result-bar"><div class="result-bar-fill" style="--pct: 82%"></div></div>
-                        <a href="#contact">View Full Case Study</a>
-                    </article>
-                    <article class="case-card" data-industry="ecommerce">
-                        <h3>DTC Revenue Optimization</h3>
-                        <p><strong>Problem:</strong> Rising CPA and underperforming product pages.</p>
-                        <p><strong>Strategy:</strong> Creative refresh, CRO sprints, and lifecycle CRM automation.</p>
-                        <p><strong>Result:</strong> <span class="metric">57% increase in conversion rate</span></p>
-                        <div class="result-bar"><div class="result-bar-fill" style="--pct: 57%"></div></div>
-                        <a href="#contact">View Full Case Study</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-wrap reveal" aria-label="Client testimonials">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">What Our Clients Are Saying</h2>
-                <div class="testimonial-wrap">
-                    <div class="testimonial-track" id="testimonial-track">
-                        <article class="testimonial-card">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Sarah Lee">
-                            <h3>Sarah Lee</h3>
-                            <p class="company">Nexora Labs</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="quote">Buzzap transformed our brand presence and built a marketing system that actually drives revenue.</p>
-                        </article>
-                        <article class="testimonial-card">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Michael Grant">
-                            <h3>Michael Grant</h3>
-                            <p class="company">CloudMint</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="quote">From creative strategy to lead automation, the Buzzap team delivered premium execution end to end.</p>
-                        </article>
-                        <article class="testimonial-card">
-                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=300&q=80" alt="Client portrait of Aisha Patel">
-                            <h3>Aisha Patel</h3>
-                            <p class="company">Vertex Health</p>
-                            <p class="stars">★★★★★</p>
-                            <p class="quote">We saw stronger messaging, better quality leads, and a growth system our team can actually scale.</p>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="academy-panel">
-                    <h2>We operate like your embedded growth team.</h2>
-                    <p>Strategy, execution, and iteration in one loop so your company moves faster with less overhead.</p>
-                    <a href="#intro-call" class="btn-primary">Book Free Strategy Call</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-wrap reveal pt-0" aria-label="Team and experts">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Experts You Actually Work With</h2>
-                <div class="team-grid">
-                    <article class="team-card">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?auto=format&fit=crop&w=600&q=80" alt="Portrait of growth strategist">
-                        <h3>Alex Rowan</h3>
-                        <p>Performance Lead · Former Head of Growth at two Series B SaaS brands.</p>
-                    </article>
-                    <article class="team-card">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?auto=format&fit=crop&w=600&q=80" alt="Portrait of AI marketing strategist">
-                        <h3>Maya Chen</h3>
-                        <p>AI Visibility Director · Specialized in AEO/GEO systems and technical content architecture.</p>
-                    </article>
-                    <article class="team-card">
-                        <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Portrait of creative performance lead">
-                        <h3>Jordan Vale</h3>
-                        <p>Creative Systems Lead · Video + conversion design for high-growth ecommerce teams.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="insights" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <h2 class="section-title">Explore Our Expert Insights</h2>
-                <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="blog-card">
-                        <div class="blog-card-thumb">
-                            <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80" alt="AI strategy visualization">
-                        </div>
-                        <div class="blog-card-body">
-                            <h3>AI Marketing in 2026</h3>
-                            <p>How lean teams can deploy high-output AI systems without bloating operations.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </article>
-                    <article class="blog-card">
-                        <div class="blog-card-thumb">
-                            <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80" alt="Automation workflow dashboard">
-                        </div>
-                        <div class="blog-card-body">
-                            <h3>Automation Systems That Sell</h3>
-                            <p>The practical stack for lead nurturing, qualification, and pipeline velocity.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </article>
-                    <article class="blog-card">
-                        <div class="blog-card-thumb">
-                            <img loading="lazy" width="1200" height="800" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80" alt="Growth chart and analytics screen">
-                        </div>
-                        <div class="blog-card-body">
-                            <h3>Growth Strategies With Signal</h3>
-                            <p>Use first-party data and creative experimentation to scale with confidence.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="tools" class="section-wrap reveal pt-0">
-            <div class="mx-auto grid max-w-7xl gap-6 px-5 md:grid-cols-2 md:px-8">
-                <article class="tool-card">
-                    <h3>AI Visibility Score</h3>
-                    <p>Estimate your current AI-search readiness in under 30 seconds.</p>
-                    <label>Technical SEO Maturity
-                        <input id="seo-maturity" type="range" min="0" max="100" value="55">
-                    </label>
-                    <label>AI Content Coverage
-                        <input id="ai-coverage" type="range" min="0" max="100" value="48">
-                    </label>
-                    <label>Structured Data Readiness
-                        <input id="schema-readiness" type="range" min="0" max="100" value="42">
-                    </label>
-                    <p class="tool-result">Your visibility score: <strong id="visibility-score">48</strong>/100</p>
-                </article>
-                <article class="tool-card">
-                    <h3>Channel Mix Simulator</h3>
-                    <p>Preview a recommended monthly budget split by growth stage.</p>
-                    <label>Monthly Budget (USD)
-                        <input id="budget-range" type="range" min="5000" max="250000" step="5000" value="50000">
-                    </label>
-                    <p class="tool-result">Budget: <strong id="budget-value">$50,000</strong></p>
-                    <div class="mix-bars">
-                        <div><span>Paid Media</span><em id="mix-paid">$25,000</em></div>
-                        <div><span>SEO + AEO</span><em id="mix-seo">$15,000</em></div>
-                        <div><span>Creative + CRO</span><em id="mix-creative">$10,000</em></div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section id="lead-magnet" class="section-wrap reveal pt-0">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="lead-magnet-card">
-                    <div>
-                        <p class="eyebrow">Free Guide</p>
-                        <h2 class="section-title mb-3">10 AI Marketing Automations Every Business Should Use</h2>
-                        <p class="section-intro">Capture visitors who are not ready to book yet, then nurture them later with email. This is your soft-conversion asset.</p>
-                    </div>
-                    <form id="lead-magnet-form" class="lead-magnet-form" action="#" method="post">
-                        <label>
-                            Work Email
-                            <input type="email" name="email" placeholder="you@company.com" required>
-                        </label>
-                        <button type="submit" class="btn-primary">Get the Free Guide</button>
-                        <p id="lead-magnet-success" class="lead-magnet-success" hidden>Guide unlocked. Open it here: <a href="guide.html">10 AI Marketing Automations</a></p>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <section id="intro-call" class="section-wrap reveal pt-0">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="intro-call-card">
-                    <div>
-                        <p class="eyebrow">Intro Call Funnel</p>
-                        <h2 class="section-title mb-3">Let's Build Your Growth System</h2>
-                        <p class="section-intro">Book a 15-minute strategy call to see how Buzzap can automate your marketing and lead generation.</p>
-                    </div>
-                    <a href="https://calendly.com/" target="_blank" rel="noreferrer" class="btn-primary magnetic">Book Free Strategy Call</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section-wrap reveal">
-            <div class="mx-auto max-w-7xl px-5 md:px-8">
-                <div class="grid gap-10 lg:grid-cols-2">
-                    <div>
-                        <h2 class="section-title">Let's Talk About Your Growth</h2>
-                        <p class="max-w-xl text-white/75">A focused 30-minute call can define your next phase of profitable growth.</p>
-                    </div>
-                    <form id="contact-form" class="contact-form" action="#" method="post">
-                        <div class="form-step is-active" data-step="1">
-                            <label>Name<input type="text" name="name" required></label>
-                            <label>Email<input type="email" name="email" required></label>
-                            <button type="button" class="btn-primary w-full step-next">Continue</button>
-                        </div>
-                        <div class="form-step" data-step="2">
-                            <label>Company<input type="text" name="company" required></label>
-                            <label>Budget Range
-                                <select name="budget" required>
-                                    <option value="">Select budget</option>
-                                    <option>$5k - $15k/mo</option>
-                                    <option>$15k - $50k/mo</option>
-                                    <option>$50k - $150k/mo</option>
-                                    <option>$150k+/mo</option>
-                                </select>
-                            </label>
-                            <div class="flex gap-3">
-                                <button type="button" class="btn-secondary flex-1 step-prev">Back</button>
-                                <button type="button" class="btn-primary flex-1 step-next">Continue</button>
-                            </div>
-                        </div>
-                        <div class="form-step" data-step="3">
-                            <label>Message<textarea name="message" rows="4" required></textarea></label>
-                            <div class="flex gap-3">
-                                <button type="button" class="btn-secondary flex-1 step-prev">Back</button>
-                                <button type="submit" class="btn-primary flex-1">Start Your Growth Project</button>
-                            </div>
-                        </div>
-                        <p id="form-success" class="hidden mt-4 rounded-lg border border-buzzBlue/50 bg-buzzBlue/10 px-4 py-3 text-sm text-buzzCyan">Thanks. Your request has been captured. Our team will reach out within 1 business day.</p>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-white/10 py-12">
-        <div class="mx-auto grid max-w-7xl gap-10 px-5 md:grid-cols-3 md:px-8">
-            <div>
-                <h3 class="footer-title">EXPLORE</h3>
-                <a href="#services">Services</a>
-                <a href="#case-studies">Case Studies</a>
-                <a href="#insights">Insights</a>
-                <a href="#about">Careers</a>
-            </div>
-            <div>
-                <h3 class="footer-title">JOIN US</h3>
-                <a href="#">LinkedIn</a>
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-            </div>
-            <div>
-                <h3 class="footer-title">CONTACT US</h3>
-                <a href="#intro-call">Book Free Strategy Call</a>
-                <div class="newsletter-mini">
-                    <p class="text-sm text-white/70">Subscribe to our newsletter</p>
-                    <p class="text-xs text-white/50">We respect your inbox. You can unsubscribe anytime.</p>
-                    <form class="mt-3 flex gap-2">
-                        <input type="email" placeholder="Email" aria-label="Email" required>
-                        <button type="submit" class="btn-primary">Submit</button>
-                    </form>
-                </div>
+        <div>
+            <h3 class="footer-title">JOIN US</h3>
+            <a href="#">LinkedIn</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+        <div>
+            <h3 class="footer-title">CONTACT US</h3>
+            <a href="#intro-call">Book Intro Call</a>
+            <div class="newsletter-mini">
+                <p class="text-sm text-white/70">Subscribe to our newsletter</p>
+                <p class="text-xs text-white/50">We respect your inbox. You can unsubscribe anytime.</p>
+                <form class="mt-3 flex gap-2">
+                    <input type="email" placeholder="Email" aria-label="Email" required>
+                    <button type="submit" class="btn-primary">Submit</button>
+                </form>
             </div>
         </div>
-        <p class="mt-10 text-center text-sm text-white/50">© Buzzap Innovations 2026</p>
-    </footer>
-
-    <button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel" aria-label="Open Buzzap Assistant">Chat</button>
-    <div id="chat-panel" class="chat-panel" role="dialog" aria-live="polite" aria-label="Buzzap Assistant chat panel">
-        <div class="chat-head">Buzzap Assistant</div>
-        <p>Hi 👋 I'm Buzzap Assistant. How can we help grow your brand today?</p>
     </div>
+    <p class="mt-10 text-center text-sm text-white/50">© Buzzap Innovations 2026</p>
+</footer>
 
-    <div class="sticky-cta" id="sticky-cta">
-        <p>Ready to turn marketing into a profit center?</p>
-        <a href="#intro-call" class="btn-primary magnetic">Book Free Strategy Call</a>
-    </div>
+<button id="chat-toggle" class="chat-toggle" aria-expanded="false" aria-controls="chat-panel" aria-label="Open Buzzap Assistant">Chat</button>
+<div id="chat-panel" class="chat-panel" role="dialog" aria-live="polite" aria-label="Buzzap Assistant chat panel">
+    <div class="chat-head">Buzzap Assistant</div>
+    <p>Hi, I'm Buzzap Assistant. How can we help grow your brand today?</p>
+</div>
 
-    <div id="exit-modal" class="exit-modal" aria-hidden="true" role="dialog" aria-label="Free AI growth checklist">
-        <div class="exit-modal-card">
-            <button id="exit-close" class="exit-close" aria-label="Close modal">×</button>
-            <h3>Before You Go: Free AI Growth Audit Checklist</h3>
-            <p>Get the exact framework we use to diagnose bottlenecks across Paid, SEO, and AI Visibility.</p>
-            <form class="exit-form">
-                <input type="email" placeholder="you@company.com" required>
-                <button type="submit" class="btn-primary">Send Checklist</button>
-            </form>
-        </div>
-    </div>
+<div class="sticky-cta" id="sticky-cta">
+    <p>Ready to turn marketing into a profit center?</p>
+    <a href="#intro-call" class="btn-primary magnetic">Book Free Strategy Call</a>
+</div>
 
-    <button id="back-to-top" aria-label="Back to top">↑</button>
+<div id="exit-modal" class="exit-modal" aria-hidden="true" role="dialog" aria-label="Free AI growth checklist">
+    <div class="exit-modal-card">
+        <button id="exit-close" class="exit-close" aria-label="Close modal">x</button>
+        <h3>Before You Go: Free AI Growth Audit Checklist</h3>
+        <p>Get the exact framework we use to diagnose bottlenecks across Paid, SEO, and AI visibility.</p>
+        <form class="exit-form">
+            <input type="email" placeholder="you@company.com" required>
+            <button type="submit" class="btn-primary">Send Checklist</button>
+        </form>
     </div>
+</div>
+
+<button id="back-to-top" aria-label="Back to top">↑</button>
+</div>

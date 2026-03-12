@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | Buzzap Innovations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body { display: block; }
+        .services-wrap {
+            width: min(100% - 2rem, 76rem);
+            margin: 0 auto;
+            padding: 7rem 0 5rem;
+        }
+        .services-hero {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 1.2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(57, 163, 255, 0.18), rgba(0, 209, 255, 0.08), rgba(255, 255, 255, 0.03));
+            margin-bottom: 1.2rem;
+        }
+        .service-detail {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 1.1rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            padding: 1.4rem;
+            margin-top: 1rem;
+        }
+        .service-detail h2 {
+            margin-bottom: 0.9rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .service-grid {
+            display: grid;
+            gap: 0.9rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            margin-top: 0.9rem;
+        }
+        .service-block {
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            border-radius: 0.9rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .service-block h3 {
+            margin-bottom: 0.45rem;
+            color: #00d1ff;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+        .tag-line {
+            display: inline-flex;
+            border: 1px solid rgba(57, 163, 255, 0.45);
+            color: #a8d8ff;
+            border-radius: 999px;
+            padding: 0.3rem 0.7rem;
+            font-size: 0.8rem;
+            margin-top: 0.55rem;
+            margin-right: 0.4rem;
+        }
+        .page-cta {
+            margin-top: 2rem;
+            border: 1px solid rgba(57, 163, 255, 0.45);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(4, 10, 22, 0.9);
+        }
+        @media (min-width: 900px) {
+            .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+    </style>
+</head>
+<body class="bg-buzzDark text-white antialiased">
+    <main class="services-wrap">
+        <section class="services-hero">
+            <p class="eyebrow">Services Page</p>
+            <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.4rem);">Revenue Driver Services</h1>
+            <p class="section-intro">Each offer below is built to fix pipeline bottlenecks, accelerate conversions, and improve sales efficiency. Every service includes clear Problem, Solution, Process, Results, and CTA structure.</p>
+            <a class="btn-secondary" href="index.html#services" style="margin-top: 1rem; display: inline-flex;">Back to Home</a>
+        </section>
+
+        <section class="service-detail" id="brand-identity">
+            <h2>1. Brand &amp; Visual Identity</h2>
+            <div class="service-grid">
+                <article class="service-block"><h3>Problem</h3><p>Buyers do not clearly understand what makes your brand different, so trust and conversion suffer.</p></article>
+                <article class="service-block"><h3>Solution</h3><p>Positioning strategy, logo systems, messaging hierarchy, and visual identity assets aligned to your ICP.</p></article>
+                <article class="service-block"><h3>Process</h3><p>Discovery workshop, competitive map, narrative architecture, design system, rollout toolkit.</p></article>
+                <article class="service-block"><h3>Results</h3><p>Higher message clarity, stronger ad response rates, and improved sales conversation quality.</p></article>
+            </div>
+            <a href="index.html#intro-call" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Book Intro Call</a>
+        </section>
+
+        <section class="service-detail" id="ai-seo">
+            <h2>2. AI SEO Optimization</h2>
+            <div class="service-grid">
+                <article class="service-block"><h3>Problem</h3><p>Organic traffic is inconsistent, keyword strategy is fragmented, and content output is too slow.</p></article>
+                <article class="service-block"><h3>Solution</h3><p>SEO automation, intent-based keyword systems, technical fixes, and AI-assisted content pipelines.</p></article>
+                <article class="service-block"><h3>Process</h3><p>Technical audit, keyword clustering, topical map creation, publishing workflow, on-page iteration loops.</p></article>
+                <article class="service-block"><h3>Results</h3><p>More qualified organic sessions, improved rankings in priority categories, and lower acquisition cost.</p></article>
+            </div>
+            <a href="index.html#intro-call" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Book Intro Call</a>
+        </section>
+
+        <section class="service-detail" id="paid-ads">
+            <h2>3. Paid Ads Campaigns</h2>
+            <div class="service-grid">
+                <article class="service-block"><h3>Problem</h3><p>Ad spend rises while conversion quality drops because targeting, creative, and tracking are misaligned.</p></article>
+                <article class="service-block"><h3>Solution</h3><p>High-converting campaign architecture, creative testing cadence, and accurate conversion tracking.</p></article>
+                <article class="service-block"><h3>Process</h3><p>Offer-audience fit validation, campaign buildout, landing page alignment, signal calibration, weekly optimization.</p></article>
+                <article class="service-block"><h3>Results</h3><p>Better lead quality, lower cost per acquisition, and faster movement from click to sales opportunity.</p></article>
+            </div>
+            <a href="index.html#intro-call" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Book Intro Call</a>
+        </section>
+
+        <section class="service-detail" id="crm-systems">
+            <h2>4. CRM Systems</h2>
+            <span class="tag-line">HubSpot Integration</span>
+            <div class="service-grid">
+                <article class="service-block"><h3>Problem</h3><p>Leads leak between marketing and sales due to weak pipeline structure and inconsistent handoff logic.</p></article>
+                <article class="service-block"><h3>Solution</h3><p>CRM pipeline setup, lifecycle stages, SLA workflows, and automation that routes every lead correctly.</p></article>
+                <article class="service-block"><h3>Process</h3><p>Pipeline design, field architecture, scoring rules, automation mapping, dashboard deployment.</p></article>
+                <article class="service-block"><h3>Results</h3><p>Faster follow-up, cleaner forecasting, stronger conversion from MQL to SQL and closed revenue.</p></article>
+            </div>
+            <a href="index.html#intro-call" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Book Intro Call</a>
+        </section>
+
+        <section class="service-detail" id="ai-marketing-systems">
+            <h2>5. AI-Powered Marketing Systems</h2>
+            <span class="tag-line">Make</span>
+            <span class="tag-line">Apollo.io</span>
+            <div class="service-grid">
+                <article class="service-block"><h3>Problem</h3><p>Manual prospecting and follow-up create delays, inconsistent outreach, and poor pipeline velocity.</p></article>
+                <article class="service-block"><h3>Solution</h3><p>Automated lead generation, enrichment, sequencing, and outreach orchestration using AI-powered workflows.</p></article>
+                <article class="service-block"><h3>Process</h3><p>Workflow map, source integration, enrichment logic, outbound sequence build, quality controls, reporting.</p></article>
+                <article class="service-block"><h3>Results</h3><p>Higher outbound efficiency, better meeting-booked rates, and scalable demand generation with less overhead.</p></article>
+            </div>
+            <a href="index.html#intro-call" class="btn-primary" style="margin-top: 1rem; display: inline-flex;">Book Intro Call</a>
+        </section>
+
+        <section class="page-cta">
+            <div>
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Ready to turn services into revenue outcomes?</h2>
+                <p class="section-intro">Book your intro call and get a prioritized execution roadmap.</p>
+            </div>
+            <a href="https://calendly.com/" target="_blank" rel="noreferrer" class="btn-primary">Book Intro Call</a>
+        </section>
+    </main>
+</body>
+</html>
