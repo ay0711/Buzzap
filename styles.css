@@ -20,6 +20,43 @@ body {
         radial-gradient(750px 420px at 6% 30%, rgba(0, 209, 255, 0.12), transparent 55%),
         var(--bg);
     color: var(--text);
+    position: relative;
+    isolation: isolate;
+}
+
+/* Global honeycomb texture across all pages */
+body::after {
+    content: "";
+    position: fixed;
+    inset: -12%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 42'%3E%3Cpath d='M12 1h24l12 20-12 20H12L0 21Z' fill='none' stroke='%2339a3ff' stroke-opacity='0.26' stroke-width='1.2'/%3E%3C/svg%3E");
+    background-size: 78px 68px;
+    background-position: 0 0;
+    animation: honeycombPan 38s linear infinite, honeycombPulse 9s ease-in-out infinite;
+}
+
+@keyframes honeycombPan {
+    from {
+        background-position: 0 0;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        background-position: 78px 68px;
+        transform: translate3d(-1.2%, 0.8%, 0);
+    }
+}
+
+@keyframes honeycombPulse {
+    0%,
+    100% {
+        opacity: 0.24;
+    }
+    50% {
+        opacity: 0.34;
+    }
 }
 
 .site-shell {
@@ -298,7 +335,105 @@ body {
 
 .hero {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(255, 255, 255, 0));
+    position: relative;
 }
+
+.honeycomb-bg {
+    position: absolute;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    min-width: 600px;
+    min-height: 400px;
+    max-width: none;
+    max-height: none;
+    z-index: 0;
+    opacity: 0.22;
+    pointer-events: none;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.icon-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    --ring-radius: 102px;
+    width: 220px;
+    height: 220px;
+    max-width: 38vw;
+    max-height: 38vw;
+    min-width: 140px;
+    min-height: 140px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: block;
+}
+.icon-placeholder {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,0.13);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #39a3ff;
+    font-size: 1rem;
+    border: 1.5px solid #39a3ff;
+    box-shadow: 0 2px 8px 0 rgba(57,163,255,0.08);
+    user-select: none;
+    z-index: 1;
+    /* Responsive circular placement */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--angle, 0deg))) translateY(calc(-1 * var(--ring-radius))) rotate(calc(-1 * var(--angle, 0deg)));
+    transition: box-shadow 0.2s;
+    /* SVG icon sizing */
+    padding: 0;
+    overflow: visible;
+    box-sizing: border-box;
+    /* Make icons scale responsively */
+    width: 44px;
+    height: 44px;
+    min-width: 32px;
+    min-height: 32px;
+    max-width: 56px;
+    max-height: 56px;
+    /* Center SVG inside */
+}
+
+.icon-placeholder svg {
+    display: block;
+    margin: auto;
+    width: 80%;
+    height: 80%;
+}
+
+@media (max-width: 640px) {
+    .icon-ring {
+        --ring-radius: 84px;
+        width: 190px;
+        height: 190px;
+    }
+
+    .icon-placeholder {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+/* Icon ring positions (8 icons, evenly spaced) */
+.icon-placeholder[data-pos="0"] { --angle: 0deg; }
+.icon-placeholder[data-pos="1"] { --angle: 45deg; }
+.icon-placeholder[data-pos="2"] { --angle: 90deg; }
+.icon-placeholder[data-pos="3"] { --angle: 135deg; }
+.icon-placeholder[data-pos="4"] { --angle: 180deg; }
+.icon-placeholder[data-pos="5"] { --angle: 225deg; }
+.icon-placeholder[data-pos="6"] { --angle: 270deg; }
+.icon-placeholder[data-pos="7"] { --angle: 315deg; }
+
 
 .hero-grid {
     position: absolute;
