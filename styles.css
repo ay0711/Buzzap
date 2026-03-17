@@ -358,16 +358,17 @@ body::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    --ring-radius: 102px;
-    width: 220px;
-    height: 220px;
+    --ring-radius: 128px;
+    width: 280px;
+    height: 280px;
     max-width: 38vw;
     max-height: 38vw;
-    min-width: 140px;
-    min-height: 140px;
+    min-width: 190px;
+    min-height: 190px;
     transform: translate(-50%, -50%);
     pointer-events: none;
     display: block;
+    animation: orbitIcons 19s linear infinite;
 }
 .icon-placeholder {
     position: absolute;
@@ -395,12 +396,12 @@ body::after {
     overflow: visible;
     box-sizing: border-box;
     /* Make icons scale responsively */
-    width: 44px;
-    height: 44px;
-    min-width: 32px;
-    min-height: 32px;
-    max-width: 56px;
-    max-height: 56px;
+    width: 48px;
+    height: 48px;
+    min-width: 36px;
+    min-height: 36px;
+    max-width: 60px;
+    max-height: 60px;
     /* Center SVG inside */
 }
 
@@ -411,16 +412,25 @@ body::after {
     height: 80%;
 }
 
+@keyframes orbitIcons {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
 @media (max-width: 640px) {
     .icon-ring {
-        --ring-radius: 84px;
-        width: 190px;
-        height: 190px;
+        --ring-radius: 92px;
+        width: 210px;
+        height: 210px;
     }
 
     .icon-placeholder {
-        width: 38px;
-        height: 38px;
+        width: 40px;
+        height: 40px;
     }
 }
 
@@ -494,19 +504,41 @@ body::after {
 .hero-card {
     border: 1px solid rgba(255, 255, 255, 0.13);
     border-radius: 1.25rem;
-    padding: 2rem;
+    padding: 2.35rem;
+    min-height: 400px;
+    width: min(100%, 520px);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
     backdrop-filter: blur(10px);
     box-shadow: 0 24px 55px rgba(0, 0, 0, 0.35), var(--glow);
 }
 
 .lightning-wrap {
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
+    min-height: 300px;
+    width: 100%;
+    display: grid;
+    place-items: center;
 }
 
 .lightning-svg {
-    width: 4rem;
-    height: 4rem;
+    width: 5.8rem;
+    height: 5.8rem;
+}
+
+@media (max-width: 640px) {
+    .hero-card {
+        min-height: 340px;
+        padding: 1.8rem;
+    }
+
+    .lightning-wrap {
+        min-height: 230px;
+    }
+
+    .lightning-svg {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
 }
 
 .bolt-path {
@@ -761,6 +793,25 @@ body::after {
     color: rgba(255, 255, 255, 0.85);
 }
 
+.video-panel {
+    padding: clamp(1.1rem, 2vw, 1.9rem);
+}
+
+.video-frame-wrap {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 1rem;
+    overflow: hidden;
+    background: rgba(4, 8, 18, 0.85);
+}
+
+.academy-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    display: block;
+    border: 0;
+}
+
+
 .blog-card img {
     width: 100%;
     height: 12.5rem;
@@ -842,6 +893,22 @@ body::after {
     color: rgba(255, 255, 255, 0.68);
 }
 
+.site-footer {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(4, 9, 20, 0.5));
+}
+
+.footer-grid {
+    row-gap: 1.8rem;
+}
+
+.footer-col {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.9rem;
+    padding: 1rem 1rem 1.1rem;
+    background: rgba(255, 255, 255, 0.015);
+}
+
 footer a {
     display: block;
     margin-top: 0.62rem;
@@ -851,6 +918,48 @@ footer a {
 footer a:hover,
 footer a:focus-visible {
     color: #fff;
+}
+
+.footer-socials {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 0.7rem;
+}
+
+.social-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.05);
+    margin-top: 0;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.social-icon-link svg {
+    width: 1rem;
+    height: 1rem;
+    fill: rgba(255, 255, 255, 0.9);
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(57, 163, 255, 0.75);
+    background: rgba(57, 163, 255, 0.16);
+    box-shadow: 0 0 14px rgba(57, 163, 255, 0.28);
+}
+
+.newsletter-form {
+    align-items: center;
+}
+
+.newsletter-form .btn-primary {
+    padding: 0.62rem 1rem;
+    white-space: nowrap;
 }
 
 .chat-toggle {
@@ -934,40 +1043,190 @@ footer a:focus-visible {
     display: none;
 }
 
-.team-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
+.team-carousel {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    touch-action: pan-y;
+    cursor: grab;
+}
+
+.team-carousel:focus-visible {
+    outline: 2px solid rgba(57, 163, 255, 0.7);
+    outline-offset: 4px;
+}
+
+.team-carousel.is-dragging {
+    cursor: grabbing;
+}
+
+.team-carousel-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-bottom: 0.85rem;
+    position: relative;
+    z-index: 4;
+}
+
+.team-carousel-btn {
+    width: 2.45rem;
+    height: 2.45rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1;
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.team-carousel-btn:hover,
+.team-carousel-btn:focus-visible {
+    transform: translateY(-1px);
+    border-color: rgba(57, 163, 255, 0.72);
+    background: rgba(57, 163, 255, 0.18);
+    box-shadow: 0 0 16px rgba(57, 163, 255, 0.28);
+}
+
+.team-carousel.reduced-motion .team-carousel-btn {
+    border-color: rgba(57, 163, 255, 0.55);
+    background: rgba(57, 163, 255, 0.14);
+}
+
+.team-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    padding: 0.35rem 0;
+    will-change: transform;
+    animation: teamMarquee 65s linear infinite;
+}
+
+.team-track.is-gsap {
+    animation: none;
+}
+
+.team-carousel:hover .team-track,
+.team-carousel:focus-within .team-track {
+    animation-play-state: paused;
+}
+
+@keyframes teamMarquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-35%);
+    }
 }
 
 .team-card {
+    position: relative;
+    flex: 0 0 min(82vw, 260px);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1rem;
     overflow: hidden;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+    transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease;
+}
+
+.team-card:hover,
+.team-card:focus-within {
+    transform: translateY(-8px);
+    border-color: rgba(57, 163, 255, 0.42);
+    box-shadow: 0 26px 48px rgba(0, 0, 0, 0.28), 0 0 24px rgba(57, 163, 255, 0.16);
+}
+
+.team-card-media {
+    position: relative;
+    overflow: hidden;
 }
 
 .team-card img {
     width: 100%;
-    height: 14rem;
+    height: 18rem;
     object-fit: cover;
+    transition: transform 500ms ease;
 }
 
-.team-card h3,
-.team-card p {
-    padding: 0 1rem;
+.team-card:hover img,
+.team-card:focus-within img {
+    transform: scale(1.06);
 }
 
-.team-card h3 {
-    margin-top: 0.9rem;
+.team-card-overlay {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 1rem;
+    display: grid;
+    gap: 0.85rem;
+    background: linear-gradient(180deg, rgba(5, 7, 15, 0.02), rgba(5, 7, 15, 0.92) 36%, rgba(5, 7, 15, 0.98));
+    transform: translateY(calc(100% - 3.1rem));
+    transition: transform 320ms ease;
+    z-index: 2;
+}
+
+.team-card:hover .team-card-overlay,
+.team-card:focus-within .team-card-overlay {
+    transform: translateY(0);
+}
+
+.team-bio {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.team-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+
+.team-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 4.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0.38rem 0.72rem;
+    color: #fff;
+    font-size: 0.82rem;
+    transition: background-color 220ms ease, border-color 220ms ease, color 220ms ease;
+}
+
+.team-socials a:hover,
+.team-socials a:focus-visible {
+    background: rgba(57, 163, 255, 0.18);
+    border-color: rgba(57, 163, 255, 0.55);
+    color: #dff3ff;
+}
+
+.team-card-body {
+    position: relative;
+    z-index: 1;
+    padding: 1rem 1rem 1.1rem;
+}
+
+.team-card-body h3 {
+    margin: 0;
     font-weight: 600;
+    font-size: 1.1rem;
 }
 
-.team-card p {
-    margin-top: 0.5rem;
-    padding-bottom: 1rem;
-    color: var(--muted);
+.team-role {
+    margin: 0.35rem 0 0;
+    color: var(--cyan);
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
 }
+
 
 .tool-card {
     border: 1px solid rgba(255, 255, 255, 0.11);
@@ -1152,6 +1411,25 @@ footer a:focus-visible {
         padding: 4.4rem 0;
     }
 
+    .hero {
+        padding-top: 6.4rem;
+    }
+
+    .video-panel h2 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    .video-panel p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    .section-intro {
+        font-size: 0.97rem;
+        line-height: 1.65;
+    }
+
     .project-card {
         min-height: 18rem;
     }
@@ -1175,6 +1453,30 @@ footer a:focus-visible {
 
     .sticky-cta p {
         font-size: 0.85rem;
+    }
+
+    .site-footer {
+        padding-bottom: 8.5rem;
+    }
+
+    .footer-col {
+        padding: 0.9rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section-wrap {
+        padding: 5rem 0;
+    }
+
+    .hero-card {
+        width: min(100%, 460px);
+        min-height: 360px;
+        padding: 2rem;
+    }
+
+    .lightning-wrap {
+        min-height: 250px;
     }
 }
 
@@ -1262,8 +1564,108 @@ footer a:focus-visible {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .team-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+    .team-card {
+        flex-basis: 250px;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-carousel-controls {
+        justify-content: center;
+        margin-bottom: 0.7rem;
+    }
+
+    .team-carousel-btn {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .team-card {
+        flex-basis: min(82vw, 240px);
+    }
+
+    .team-card img {
+        height: 16rem;
+    }
+
+    .team-card-overlay {
+        padding: 0.8rem;
+        transform: translateY(calc(100% - 2.7rem));
+    }
+
+    .team-bio {
+        font-size: 0.86rem;
+        line-height: 1.45;
+    }
+
+    .team-socials {
+        gap: 0.45rem;
+    }
+
+    .team-socials a {
+        min-width: 3.9rem;
+        font-size: 0.76rem;
+        padding: 0.34rem 0.58rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-wrap {
+        padding: 3.9rem 0;
+    }
+
+    .hero-title {
+        font-size: clamp(2rem, 10.8vw, 2.7rem);
+        line-height: 1.08;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.68rem 1rem;
+        font-size: 0.92rem;
+    }
+
+    .video-panel {
+        padding: 1rem;
+    }
+
+    .video-panel h2 {
+        font-size: 1.28rem;
+        line-height: 1.24;
+    }
+
+    .video-panel p,
+    .section-intro {
+        font-size: 0.9rem;
+        line-height: 1.55;
+    }
+
+    .team-carousel {
+        mask-image: linear-gradient(90deg, transparent, black 4%, black 96%, transparent);
+    }
+
+    .team-card {
+        flex-basis: min(86vw, 220px);
+    }
+
+    .team-card-body {
+        padding: 0.85rem 0.85rem 1rem;
+    }
+
+    .newsletter-form {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.55rem;
+    }
+
+    .newsletter-form .btn-primary {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .chat-toggle {
+        right: 0.8rem;
+        bottom: 1rem;
     }
 }
 

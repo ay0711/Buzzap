@@ -17,6 +17,18 @@
     <title>Buzzap Innovations | Premium Tech Agency</title>
     <link rel="icon" href="data:," />
 
+    <script>
+      (() => {
+        const originalWarn = console.warn.bind(console);
+        console.warn = (...args) => {
+          const first = String(args[0] ?? "");
+          if (first.includes("cdn.tailwindcss.com should not be used in production")) {
+            return;
+          }
+          originalWarn(...args);
+        };
+      })();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
