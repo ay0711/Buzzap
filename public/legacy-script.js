@@ -1,7 +1,6 @@
 const header = document.getElementById("site-header");
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
-const mobileMenuClose = document.getElementById("mobile-menu-close");
 const chatToggle = document.getElementById("chat-toggle");
 const chatPanel = document.getElementById("chat-panel");
 const particleLayer = document.getElementById("particle-layer");
@@ -368,6 +367,36 @@ function initAcademyVideoAutoplay() {
         return;
     }
 
+    const toEmbedUrl = (rawUrl) => {
+        try {
+            const parsed = new URL(rawUrl);
+            const host = parsed.hostname.replace(/^www\./, "");
+            let videoId = "";
+
+            if (host === "youtu.be") {
+                videoId = parsed.pathname.replace(/^\//, "").split("/")[0];
+            } else if (host === "youtube.com" || host === "m.youtube.com") {
+                if (parsed.pathname === "/watch") {
+                    videoId = parsed.searchParams.get("v") || "";
+                } else if (parsed.pathname.startsWith("/shorts/")) {
+                    videoId = parsed.pathname.split("/")[2] || "";
+                } else if (parsed.pathname.startsWith("/embed/")) {
+                    return rawUrl;
+                }
+            }
+
+            if (!videoId) {
+                return rawUrl;
+            }
+
+            return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&rel=0&controls=1&enablejsapi=1&loop=1&playlist=${videoId}`;
+        } catch {
+            return rawUrl;
+        }
+    };
+
+    const normalizedVideoSrc = toEmbedUrl(videoSrc);
+
     let hasLoaded = false;
 
     const sendPlayerCommand = (func) => {
@@ -382,7 +411,7 @@ function initAcademyVideoAutoplay() {
 
     const playVideo = () => {
         if (!hasLoaded) {
-            academyVideo.src = videoSrc;
+            academyVideo.src = normalizedVideoSrc;
             hasLoaded = true;
             return;
         }
@@ -877,7 +906,6 @@ function initIntroSequence() {
 }
 
 menuToggle && menuToggle.addEventListener("click", toggleMobileMenu);
-mobileMenuClose && mobileMenuClose.addEventListener("click", closeMobileMenu);
 window.addEventListener("scroll", setHeaderState);
 setHeaderState();
 

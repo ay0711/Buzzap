@@ -889,77 +889,135 @@ body::after {
 
 .footer-title {
     font-size: 0.82rem;
-    letter-spacing: 0.14em;
-    color: rgba(255, 255, 255, 0.68);
+    letter-spacing: 0.18em;
+    color: rgba(255, 255, 255, 0.62);
 }
 
 .site-footer {
     position: relative;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(4, 9, 20, 0.5));
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 12% 12%, rgba(57, 163, 255, 0.14), transparent 24%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.01), rgba(4, 9, 20, 0.74));
 }
 
 .footer-grid {
     row-gap: 1.8rem;
+    align-items: stretch;
 }
 
 .footer-col {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.9rem;
-    padding: 1rem 1rem 1.1rem;
-    background: rgba(255, 255, 255, 0.015);
+    position: relative;
+    min-height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: 1.2rem;
+    padding: 1.25rem 1.15rem 1.2rem;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 18px 40px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(10px);
+}
+
+.footer-note {
+    margin-top: 0.85rem;
+    max-width: 22rem;
+    color: rgba(255, 255, 255, 0.58);
+    font-size: 0.93rem;
+    line-height: 1.6;
 }
 
 footer a {
     display: block;
-    margin-top: 0.62rem;
+    margin-top: 0.7rem;
     color: rgba(255, 255, 255, 0.84);
+    transition: color 180ms ease, transform 180ms ease, opacity 180ms ease;
 }
 
 footer a:hover,
 footer a:focus-visible {
     color: #fff;
+    transform: translateX(3px);
+}
+
+.footer-col > a {
+    width: fit-content;
+    padding-bottom: 0.12rem;
+    border-bottom: 1px solid transparent;
+}
+
+.footer-col > a:hover,
+.footer-col > a:focus-visible {
+    border-bottom-color: rgba(57, 163, 255, 0.55);
 }
 
 .footer-socials {
-    margin-top: 0.8rem;
+    margin-top: 1rem;
     display: flex;
-    gap: 0.7rem;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
 .social-icon-link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.35rem;
-    height: 2.35rem;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
     margin-top: 0;
     transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
 }
 
 .social-icon-link svg {
-    width: 1rem;
-    height: 1rem;
+    width: 0.96rem;
+    height: 0.96rem;
     fill: rgba(255, 255, 255, 0.9);
 }
 
 .social-icon-link:hover,
 .social-icon-link:focus-visible {
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
     border-color: rgba(57, 163, 255, 0.75);
     background: rgba(57, 163, 255, 0.16);
-    box-shadow: 0 0 14px rgba(57, 163, 255, 0.28);
+    box-shadow: 0 0 18px rgba(57, 163, 255, 0.24);
 }
 
 .newsletter-form {
+    margin-top: 0.95rem;
+    display: flex;
     align-items: center;
+    gap: 0.7rem;
+}
+
+.newsletter-form input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 2.75rem;
+    border-radius: 0.95rem;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(8, 14, 28, 0.88);
+    padding: 0 1rem;
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    transition: border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.48);
+}
+
+.newsletter-form input:focus {
+    outline: none;
+    border-color: rgba(57, 163, 255, 0.58);
+    box-shadow: 0 0 0 3px rgba(57, 163, 255, 0.12);
 }
 
 .newsletter-form .btn-primary {
-    padding: 0.62rem 1rem;
+    min-height: 2.75rem;
+    padding: 0.62rem 1.25rem;
     white-space: nowrap;
+    box-shadow: 0 10px 24px rgba(57, 163, 255, 0.22);
 }
 
 .chat-toggle {
@@ -2131,5 +2189,118 @@ body::before {
 @media (min-width: 1100px) {
     .industry-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* ================================================================
+   FINAL POLISH PASS — rhythm, hierarchy, mobile balance
+   ================================================================ */
+
+.section-wrap {
+    padding: clamp(4.4rem, 7.5vw, 6.1rem) 0;
+}
+
+.section-title {
+    margin-bottom: 1.15rem;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+}
+
+.section-intro {
+    max-width: 46rem;
+    margin-bottom: 1.35rem;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.service-card,
+.case-card,
+.blog-card,
+.team-card,
+.proof-card,
+.tool-card {
+    border-radius: 1.08rem;
+}
+
+.service-card,
+.case-card,
+.blog-card,
+.proof-card,
+.tool-card {
+    padding: 1.5rem;
+}
+
+.service-card p,
+.case-card p,
+.blog-card p,
+.section-intro,
+.footer-note {
+    line-height: 1.68;
+}
+
+.service-card:hover,
+.service-card:focus-within,
+.case-card:hover,
+.case-card:focus-within,
+.blog-card:hover,
+.blog-card:focus-within,
+.team-card:hover,
+.team-card:focus-within {
+    transform: translateY(-7px);
+}
+
+.btn-primary,
+.btn-secondary,
+.social-icon-link,
+.team-carousel-btn,
+.filter-btn,
+.nav-link {
+    transition-timing-function: cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgba(57, 163, 255, 0.66);
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .section-wrap {
+        padding: 4rem 0;
+    }
+
+    .section-title {
+        font-size: clamp(1.38rem, 3.9vw, 1.9rem);
+    }
+
+    .section-intro {
+        font-size: 0.95rem;
+        line-height: 1.62;
+        margin-bottom: 1rem;
+    }
+
+    .service-card,
+    .case-card,
+    .blog-card,
+    .proof-card,
+    .tool-card,
+    .footer-col {
+        padding: 1.1rem;
+    }
+
+    .footer-grid {
+        row-gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-wrap {
+        padding: 3.6rem 0;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        min-height: 2.55rem;
     }
 }
