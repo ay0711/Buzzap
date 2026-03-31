@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Buzzap Innovations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        body {
+            display: block;
+            cursor: auto !important;
+        }
+        body.page-projects::after {
+            animation-duration: 64s, 14s;
+            opacity: 0.18;
+        }
+        .projects-wrap {
+            width: min(100% - 2rem, 78rem);
+            margin: 0 auto;
+            padding: 2.4rem 0 5.2rem;
+        }
+        .projects-header {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(5, 10, 22, 0.86);
+            backdrop-filter: blur(12px);
+        }
+        .projects-header-inner {
+            width: min(100% - 2rem, 78rem);
+            margin: 0 auto;
+            padding: 0.95rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .projects-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .projects-menu-btn {
+            display: none;
+        }
+        .projects-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .projects-nav .current-page {
+            color: #00d1ff;
+            font-size: 0.92rem;
+        }
+        .projects-nav a:hover,
+        .projects-nav a[aria-current="page"] {
+            color: #00d1ff;
+        }
+        .projects-mobile-menu {
+            display: none;
+        }
+        .mobile-menu .current-page {
+            display: block;
+            padding: 0.95rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #00d1ff;
+            font-size: 0.92rem;
+        }
+        .projects-hero {
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            background: linear-gradient(130deg, rgba(57, 163, 255, 0.16), rgba(0, 209, 255, 0.07), rgba(255, 255, 255, 0.03));
+            margin-bottom: 1.35rem;
+        }
+        .projects-grid {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .project-detail {
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            border-radius: 1rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+            padding: 1.25rem;
+        }
+        .project-detail h2 {
+            font-size: clamp(1.25rem, 2.1vw, 1.5rem);
+            margin-bottom: 0.55rem;
+        }
+        .project-meta {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.62);
+            margin-bottom: 0.7rem;
+        }
+        .project-kpis {
+            display: grid;
+            gap: 0.6rem;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            margin-top: 0.85rem;
+        }
+        .project-kpi {
+            border: 1px solid rgba(57, 163, 255, 0.3);
+            border-radius: 0.75rem;
+            background: rgba(57, 163, 255, 0.08);
+            padding: 0.7rem 0.8rem;
+        }
+        .project-kpi strong {
+            display: block;
+            font-size: 1.05rem;
+            color: #ffffff;
+        }
+        .project-kpi span {
+            color: rgba(255, 255, 255, 0.72);
+            font-size: 0.85rem;
+        }
+        .projects-cta {
+            margin-top: 1.5rem;
+            border: 1px solid rgba(57, 163, 255, 0.4);
+            border-radius: 1rem;
+            padding: 1.2rem;
+            background: rgba(4, 10, 22, 0.9);
+            display: flex;
+            gap: 0.75rem;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        @media (max-width: 899px) {
+            .projects-header-inner {
+                flex-wrap: nowrap;
+            }
+            .projects-nav {
+                display: none;
+            }
+            .projects-menu-btn {
+                display: inline-flex;
+            }
+            .projects-mobile-menu {
+                display: block;
+            }
+        }
+        @media (min-width: 940px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .project-kpis {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="page-projects bg-buzzDark text-white antialiased">
+    <header class="projects-header" aria-label="Site navigation">
+        <div class="projects-header-inner">
+            <a href="/index.html" class="logo" aria-label="Buzzap homepage">
+                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">BUZ</span>
+                <span class="bolt" aria-hidden="true">⚡</span>
+                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">ZAP</span>
+            </a>
+            <button id="projects-menu-toggle" class="menu-btn projects-menu-btn" aria-expanded="false" aria-controls="projects-mobile-menu" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="projects-nav" aria-label="Primary">
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Services</a>
+                <a href="/guide.html">Guide</a>
+                <span class="current-page" aria-current="page">Projects</span>
+            </nav>
+        </div>
+        <div id="projects-mobile-menu" class="mobile-menu projects-mobile-menu" aria-hidden="true">
+            <a href="/index.html">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/guide.html">Guide</a>
+            <span class="current-page" aria-current="page">Projects</span>
+        </div>
+    </header>
+    <main class="projects-wrap">
+        <section class="projects-hero">
+            <p class="eyebrow">Projects Archive</p>
+            <h1 class="hero-title" style="font-size: clamp(2rem, 4vw, 3.4rem);">Case Studies That Show Exactly How We Grow Revenue</h1>
+            <p class="section-intro">Every project below includes the problem, strategy, execution timeline, and measurable outcomes so you can evaluate fit before booking a call.</p>
+            <a class="btn-secondary" href="/index.html#case-studies" style="margin-top: 1rem; display: inline-flex;">Back to Homepage Case Studies</a>
+        </section>
+
+        <section class="projects-grid" aria-label="Project breakdowns">
+            <article id="fintech-pipeline" class="project-detail">
+                <h2>FinTech Pipeline Rebuild</h2>
+                <p class="project-meta">Industry: FinTech | Duration: 10 weeks | Budget Band: $12k-$20k/month</p>
+                <p><strong>Problem:</strong> Lead quality was too low because campaign messaging and audience intent were misaligned.</p>
+                <p><strong>What We Built:</strong> Segment-specific ad architecture, intent-matched landing pages, conversion event cleanup, and CRM lead scoring.</p>
+                <p><strong>Execution Stack:</strong> Meta Ads, Google Ads, GA4, HubSpot, funnel QA workflows.</p>
+                <div class="project-kpis">
+                    <div class="project-kpi"><strong>300%+</strong><span>Qualified leads increase</span></div>
+                    <div class="project-kpi"><strong>-39%</strong><span>Cost per qualified lead</span></div>
+                    <div class="project-kpi"><strong>2.1x</strong><span>SQL-to-close rate</span></div>
+                </div>
+            </article>
+
+            <article id="saas-organic" class="project-detail">
+                <h2>SaaS Organic Surge</h2>
+                <p class="project-meta">Industry: SaaS | Duration: 16 weeks | Budget Band: $8k-$14k/month</p>
+                <p><strong>Problem:</strong> Weak rankings in high-intent categories and inconsistent demo-ready traffic.</p>
+                <p><strong>What We Built:</strong> Topic cluster map, high-intent landing hubs, internal linking model, and conversion-focused page templates.</p>
+                <p><strong>Execution Stack:</strong> Technical SEO, content operations, CRO testing, analytics dashboards.</p>
+                <div class="project-kpis">
+                    <div class="project-kpi"><strong>4.2x</strong><span>Organic SQL growth</span></div>
+                    <div class="project-kpi"><strong>+186%</strong><span>Non-branded clicks</span></div>
+                    <div class="project-kpi"><strong>+58%</strong><span>Demo request conversion</span></div>
+                </div>
+            </article>
+
+            <article id="dtc-revenue" class="project-detail">
+                <h2>DTC Revenue Optimization</h2>
+                <p class="project-meta">Industry: Ecommerce | Duration: 12 weeks | Budget Band: $15k-$25k/month</p>
+                <p><strong>Problem:</strong> Rising CPA and low product-page conversion made growth expensive.</p>
+                <p><strong>What We Built:</strong> Creative testing cadence, merchandising updates, offer stacking, and retention automation.</p>
+                <p><strong>Execution Stack:</strong> Meta + TikTok paid media, email lifecycle flows, landing page testing.</p>
+                <div class="project-kpis">
+                    <div class="project-kpi"><strong>57%</strong><span>Conversion rate increase</span></div>
+                    <div class="project-kpi"><strong>500%</strong><span>Peak ROAS sprint</span></div>
+                    <div class="project-kpi"><strong>-27%</strong><span>Customer acquisition cost</span></div>
+                </div>
+            </article>
+
+            <article class="project-detail">
+                <h2>B2B Outbound Automation Engine</h2>
+                <p class="project-meta">Industry: B2B Services | Duration: 9 weeks | Budget Band: $6k-$10k/month</p>
+                <p><strong>Problem:</strong> Manual outreach was slow, inconsistent, and difficult to scale.</p>
+                <p><strong>What We Built:</strong> Prospect enrichment, sequence logic, CRM routing, and meeting-quality tracking.</p>
+                <p><strong>Execution Stack:</strong> Apollo.io, Make, HubSpot workflows, reporting automation.</p>
+                <div class="project-kpis">
+                    <div class="project-kpi"><strong>2.8x</strong><span>Meetings booked per rep</span></div>
+                    <div class="project-kpi"><strong>+64%</strong><span>Reply-to-meeting rate</span></div>
+                    <div class="project-kpi"><strong>-41%</strong><span>Manual ops time</span></div>
+                </div>
+            </article>
+        </section>
+
+        <section class="projects-cta">
+            <div>
+                <h2 style="font-size: 1.3rem; font-weight: 700;">Want this level of clarity and execution for your company?</h2>
+                <p class="section-intro">Tell us your current bottleneck and we will recommend the fastest route to measurable growth.</p>
+            </div>
+            <a href="https://calendly.com/" target="_blank" rel="noreferrer" class="btn-primary">Book Intro Call</a>
+        </section>
+    </main>
+    <script src="/claspo-init.js"></script>
+    <script>
+        const projectsMenuToggle = document.getElementById("projects-menu-toggle");
+        const projectsMobileMenu = document.getElementById("projects-mobile-menu");
+
+        if (projectsMenuToggle && projectsMobileMenu) {
+            projectsMenuToggle.addEventListener("click", () => {
+                const isOpen = projectsMenuToggle.classList.toggle("is-open");
+                projectsMobileMenu.classList.toggle("is-open", isOpen);
+                projectsMenuToggle.setAttribute("aria-expanded", String(isOpen));
+                projectsMobileMenu.setAttribute("aria-hidden", String(!isOpen));
+            });
+
+            projectsMobileMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    projectsMenuToggle.classList.remove("is-open");
+                    projectsMobileMenu.classList.remove("is-open");
+                    projectsMenuToggle.setAttribute("aria-expanded", "false");
+                    projectsMobileMenu.setAttribute("aria-hidden", "true");
+                });
+            });
+        }
+    </script>
+</body>
+</html>

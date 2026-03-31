@@ -15,6 +15,10 @@ const siteShell = document.getElementById("site-shell");
 const stickyCta = document.getElementById("sticky-cta");
 const exitModal = document.getElementById("exit-modal");
 const exitClose = document.getElementById("exit-close");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const saveDataEnabled = Boolean(navigator.connection && navigator.connection.saveData);
+const lowCpuDevice = (navigator.hardwareConcurrency || 8) <= 4;
+const motionMode = prefersReducedMotion || saveDataEnabled ? "reduced" : lowCpuDevice ? "lite" : "full";
 
 function setHeaderState() {
     if (!header) {
@@ -44,10 +48,14 @@ function closeMobileMenu() {
 }
 
 function createParticles(count = 40) {
+    if (motionMode === "reduced") {
+        return;
+    }
     if (!particleLayer) {
         return;
     }
-    for (let i = 0; i < count; i += 1) {
+    const particleCount = motionMode === "lite" ? Math.min(count, 18) : count;
+    for (let i = 0; i < particleCount; i += 1) {
         const dot = document.createElement("span");
         dot.className = "particle";
         const size = (Math.random() * 3 + 1.2).toFixed(2);
@@ -71,6 +79,13 @@ function createParticles(count = 40) {
 }
 
 function initRevealAnimation() {
+    if (motionMode === "reduced") {
+        revealEls.forEach((el) => {
+            el.style.opacity = "1";
+            el.style.transform = "none";
+        });
+        return;
+    }
     gsap.registerPlugin(ScrollTrigger);
 
     revealEls.forEach((el, index) => {
@@ -89,6 +104,9 @@ function initRevealAnimation() {
 }
 
 function initHeroAnimation() {
+    if (motionMode === "reduced") {
+        return;
+    }
     const heroGlow1 = document.querySelector(".hero-glow-1");
     const heroGlow2 = document.querySelector(".hero-glow-2");
 
@@ -143,7 +161,7 @@ function initHeroParallax() {
     const hero = document.querySelector(".hero");
     const heroGlow1 = document.querySelector(".hero-glow-1");
     const heroGlow2 = document.querySelector(".hero-glow-2");
-    if (!hero || window.matchMedia("(pointer: coarse)").matches) {
+    if (!hero || window.matchMedia("(pointer: coarse)").matches || motionMode !== "full") {
         return;
     }
 
@@ -172,10 +190,14 @@ function initTestimonialLoop() {
     const clone = testimonialTrack.innerHTML;
     testimonialTrack.insertAdjacentHTML("beforeend", clone);
 
+    if (motionMode === "reduced") {
+        return;
+    }
+
     gsap.to(testimonialTrack, {
         xPercent: -50,
         ease: "none",
-        duration: 24,
+        duration: motionMode === "lite" ? 34 : 24,
         repeat: -1
     });
 }
@@ -389,7 +411,7 @@ function initAcademyVideoAutoplay() {
                 return rawUrl;
             }
 
-            return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playsinline=1&rel=0&controls=1&enablejsapi=1&loop=1&playlist=${videoId}`;
+            return `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&playsinline=1&rel=0&controls=1&enablejsapi=1&loop=1&playlist=${videoId}`;
         } catch {
             return rawUrl;
         }
@@ -399,23 +421,36 @@ function initAcademyVideoAutoplay() {
 
     let hasLoaded = false;
 
-    const sendPlayerCommand = (func) => {
+    const sendPlayerCommand = (func, args = []) => {
         if (!academyVideo.contentWindow) {
             return;
         }
         academyVideo.contentWindow.postMessage(
-            JSON.stringify({ event: "command", func, args: [] }),
+            JSON.stringify({ event: "command", func, args }),
             "*"
         );
+    };
+
+    const forceUnmute = () => {
+        if (!hasLoaded) {
+            return;
+        }
+        sendPlayerCommand("unMute");
+        sendPlayerCommand("setVolume", [100]);
     };
 
     const playVideo = () => {
         if (!hasLoaded) {
             academyVideo.src = normalizedVideoSrc;
             hasLoaded = true;
+            window.setTimeout(() => {
+                sendPlayerCommand("playVideo");
+                forceUnmute();
+            }, 700);
             return;
         }
         sendPlayerCommand("playVideo");
+        forceUnmute();
     };
 
     const pauseVideo = () => {
@@ -692,7 +727,7 @@ function initExitIntentModal() {
 }
 
 function initCustomCursor() {
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    if (window.matchMedia("(pointer: coarse)").matches || motionMode !== "full") {
         return;
     }
 
@@ -702,6 +737,8 @@ function initCustomCursor() {
         return;
     }
 
+    document.body.classList.add("has-custom-cursor");
+
     window.addEventListener("mousemove", (event) => {
         gsap.to(dot, { x: event.clientX, y: event.clientY, duration: 0.08, overwrite: true });
         gsap.to(ring, { x: event.clientX, y: event.clientY, duration: 0.2, overwrite: true });
@@ -709,7 +746,7 @@ function initCustomCursor() {
 }
 
 function initMagneticButtons() {
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    if (window.matchMedia("(pointer: coarse)").matches || motionMode !== "full") {
         return;
     }
 
@@ -765,7 +802,7 @@ function initActiveNav() {
 }
 
 function initCardSpotlight() {
-    if (window.matchMedia("(pointer: coarse)").matches) {
+    if (window.matchMedia("(pointer: coarse)").matches || motionMode !== "full") {
         return;
     }
     const cards = document.querySelectorAll(
@@ -835,6 +872,13 @@ function initLeadMagnetForm() {
 
 function initIntroSequence() {
     if (!introOverlay || !siteShell) {
+        return Promise.resolve();
+    }
+
+    if (motionMode !== "full") {
+        introOverlay.style.display = "none";
+        siteShell.style.opacity = "1";
+        siteShell.style.transform = "none";
         return Promise.resolve();
     }
 

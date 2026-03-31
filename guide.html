@@ -68,7 +68,64 @@
         .wrap {
             width: min(100% - 2rem, 72rem);
             margin: 0 auto;
-            padding: 4rem 0 5rem;
+            padding: 2.4rem 0 5rem;
+        }
+
+        .guide-header {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(5, 10, 22, 0.86);
+            backdrop-filter: blur(12px);
+        }
+
+        .guide-header-inner {
+            width: min(100% - 2rem, 72rem);
+            margin: 0 auto;
+            padding: 0.95rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .guide-logo {
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-decoration: none;
+        }
+
+        .guide-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .guide-nav a {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .guide-nav a:hover,
+        .guide-nav .current-page {
+            color: #00d1ff;
+        }
+
+        .guide-nav .current-page {
+            font-size: 0.92rem;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            body::after {
+                animation: none;
+                opacity: 0.18;
+            }
         }
 
         .hero,
@@ -131,6 +188,17 @@
     </style>
 </head>
 <body>
+    <header class="guide-header" aria-label="Site navigation">
+        <div class="guide-header-inner">
+            <a href="/index.html" class="guide-logo" aria-label="Buzzap homepage">BUZ ⚡ ZAP</a>
+            <nav class="guide-nav" aria-label="Primary">
+                <a href="/index.html">Home</a>
+                <a href="/services.html">Services</a>
+                <a href="/projects.html">Projects</a>
+                <span class="current-page" aria-current="page">Guide</span>
+            </nav>
+        </div>
+    </header>
     <main class="wrap">
         <section class="hero">
             <p class="eyebrow">Buzzap Guide</p>
@@ -153,5 +221,6 @@
 
         <a class="back-link" href="/index.html#lead-magnet">Back to Buzzap</a>
     </main>
+    <script src="/claspo-init.js"></script>
 </body>
 </html>

@@ -9,11 +9,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <style>
-        body { display: block; }
+        body {
+            display: block;
+        }
+        body.page-services::after {
+            animation-duration: 64s, 14s;
+            opacity: 0.18;
+        }
+        .services-header {
+            position: sticky;
+            top: 0;
+            z-index: 60;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(5, 10, 22, 0.86);
+            backdrop-filter: blur(12px);
+        }
+        .services-header-inner {
+            width: min(100% - 2rem, 76rem);
+            margin: 0 auto;
+            padding: 0.95rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .services-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .services-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.92rem;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .services-nav a:hover,
+        .services-nav .current-page {
+            color: #00d1ff;
+        }
+        .services-nav .current-page {
+            font-size: 0.92rem;
+        }
+        .services-menu-btn {
+            display: none;
+        }
+        .services-mobile-menu {
+            display: none;
+        }
+        .mobile-menu .current-page {
+            display: block;
+            padding: 0.95rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #00d1ff;
+            font-size: 0.92rem;
+        }
         .services-wrap {
             width: min(100% - 2rem, 76rem);
             margin: 0 auto;
-            padding: 7rem 0 5rem;
+            padding: 2.4rem 0 5rem;
         }
         .services-hero {
             border: 1px solid rgba(255, 255, 255, 0.14);
@@ -74,12 +130,50 @@
             align-items: center;
             background: rgba(4, 10, 22, 0.9);
         }
+        @media (max-width: 899px) {
+            .services-header-inner {
+                flex-wrap: nowrap;
+            }
+            .services-nav {
+                display: none;
+            }
+            .services-menu-btn {
+                display: inline-flex;
+            }
+            .services-mobile-menu {
+                display: block;
+            }
+        }
         @media (min-width: 900px) {
             .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         }
     </style>
 </head>
-<body class="bg-buzzDark text-white antialiased">
+<body class="page-services bg-buzzDark text-white antialiased">
+    <header class="services-header" aria-label="Site navigation">
+        <div class="services-header-inner">
+            <a href="/index.html" class="logo" aria-label="Buzzap homepage">
+                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">BUZ</span>
+                <span class="bolt" aria-hidden="true">⚡</span>
+                <span class="text-lg font-semibold tracking-[0.16em] md:text-xl">ZAP</span>
+            </a>
+            <button id="services-menu-toggle" class="menu-btn services-menu-btn" aria-expanded="false" aria-controls="services-mobile-menu" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="services-nav" aria-label="Primary">
+                <a href="/index.html">Home</a>
+                <a href="/projects.html">Projects</a>
+                <a href="/guide.html">Guide</a>
+                <span class="current-page" aria-current="page">Services</span>
+            </nav>
+        </div>
+        <div id="services-mobile-menu" class="mobile-menu services-mobile-menu" aria-hidden="true">
+            <a href="/index.html">Home</a>
+            <a href="/projects.html">Projects</a>
+            <a href="/guide.html">Guide</a>
+            <span class="current-page" aria-current="page">Services</span>
+        </div>
+    </header>
     <main class="services-wrap">
         <section class="services-hero">
             <p class="eyebrow">Services Page</p>
@@ -154,5 +248,28 @@
             <a href="https://calendly.com/" target="_blank" rel="noreferrer" class="btn-primary">Book Intro Call</a>
         </section>
     </main>
+    <script src="/claspo-init.js"></script>
+    <script>
+        const servicesMenuToggle = document.getElementById("services-menu-toggle");
+        const servicesMobileMenu = document.getElementById("services-mobile-menu");
+
+        if (servicesMenuToggle && servicesMobileMenu) {
+            servicesMenuToggle.addEventListener("click", () => {
+                const isOpen = servicesMenuToggle.classList.toggle("is-open");
+                servicesMobileMenu.classList.toggle("is-open", isOpen);
+                servicesMenuToggle.setAttribute("aria-expanded", String(isOpen));
+                servicesMobileMenu.setAttribute("aria-hidden", String(!isOpen));
+            });
+
+            servicesMobileMenu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => {
+                    servicesMenuToggle.classList.remove("is-open");
+                    servicesMobileMenu.classList.remove("is-open");
+                    servicesMenuToggle.setAttribute("aria-expanded", "false");
+                    servicesMobileMenu.setAttribute("aria-hidden", "true");
+                });
+            });
+        }
+    </script>
 </body>
 </html>
